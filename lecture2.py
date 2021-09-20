@@ -65,4 +65,9 @@ print(LastOccurence("eweweeefddfddw",0,"a"))
 
 def AllOccurence(s:str,index:int,ch:str,count:int)->List[int]:
     
-    return []
+   
+   if s[index]==ch:
+       count+=1
+
+   ans=[]
+   ans.append(AllOccurence(s,index+1,ch,count))
