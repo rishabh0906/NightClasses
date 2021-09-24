@@ -11,11 +11,23 @@ def permutations(str:str,ans:str)->int:
 
     return count
 
-def permutations(str:str)->list(str):
-    return []
+def permutations(str:str,index:int):
+    
+    if len(str)==0:
+        base=[]
+        base.append("")
+        return base
+
+    myAns=[]
+    recAns=permutations(str[1:],index+1)
+                                                                    # including Current Character
+    myAns.extend(recAns)                                            # Excluding Current Character
+    
+    return myAns
  
 
-print(permutations("abc",""))
+print(permutations("abc",0))
+
 
 
   
